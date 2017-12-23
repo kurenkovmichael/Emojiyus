@@ -56,10 +56,14 @@
     NSDictionary *emojisDict = (NSDictionary *)jsonObject;
     
     _emojis = [NSMapTable strongToStrongObjectsMapTable];
-    for (id key in emojisDict) {
-        id value = [emojisDict objectForKey:key];
-        if ([key isKindOfClass:[NSString class]] && [value isKindOfClass:[NSString class]]) {
-            [_emojis setObject:value forKey:key];
+    for (id emoji in emojisDict) {
+        id smiles = [emojisDict objectForKey:emoji];
+        if ([emoji isKindOfClass:[NSString class]] && [smiles isKindOfClass:[NSArray class]]) {
+            for (id smile in (NSArray *)smiles) {
+                if ([smile isKindOfClass:[NSString class]]) {
+                    [_emojis setObject:emoji forKey:smile];
+                }
+            }
         }
     }
 }
