@@ -106,12 +106,20 @@
     _emojis = [NSMapTable strongToStrongObjectsMapTable];
     for (id emoji in emojisDict) {
         id smiles = [emojisDict objectForKey:emoji];
-        if ([emoji isKindOfClass:[NSString class]] && [smiles isKindOfClass:[NSArray class]]) {
+        if (![emoji isKindOfClass:[NSString class]])
+            continue;
+        
+        if ([smiles isKindOfClass:[NSString class]]) {
+            [_emojis setObject:emoji forKey:smiles];
+            
+        } else if ([smiles isKindOfClass:[NSArray class]]) {
             for (id smile in (NSArray *)smiles) {
                 if ([smile isKindOfClass:[NSString class]]) {
                     [_emojis setObject:emoji forKey:smile];
                 }
             }
+        } else {
+            NSAssert(NO, @"Wrong json format.");
         }
     }
 }
