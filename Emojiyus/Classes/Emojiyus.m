@@ -99,15 +99,14 @@
     id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData
                                                     options:NSJSONReadingAllowFragments
                                                       error:&error];
-    
+    NSAssert(error == nil, @"Failed parsing Json with error: %@", error);
     NSAssert(jsonObject == nil || [jsonObject isKindOfClass:[NSDictionary class]], @"Wrong mapping json.");
     NSDictionary *emojisDict = (NSDictionary *)jsonObject;
     
     _emojis = [NSMapTable strongToStrongObjectsMapTable];
     for (id emoji in emojisDict) {
         id smiles = [emojisDict objectForKey:emoji];
-        if (![emoji isKindOfClass:[NSString class]])
-            continue;
+        NSAssert([emoji isKindOfClass:[NSString class]], @"Wrong json format.");
         
         if ([smiles isKindOfClass:[NSString class]]) {
             [_emojis setObject:emoji forKey:smiles];
