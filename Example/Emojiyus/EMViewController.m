@@ -32,7 +32,7 @@
 {
     NSLog(@"%s - %@", __func__, textView.text);
     NSRange selectedRange = textView.selectedRange;
-    textView.text = [self.emojiyus emojify:textView.text];
+    textView.text = [self.emojiyus emojify:textView.text selectedRange:&selectedRange];
     textView.selectedRange = selectedRange;
 }
 

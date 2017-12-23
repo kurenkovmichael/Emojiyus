@@ -16,4 +16,6 @@
 
 - (NSString *)emojify:(NSString *)string;
 
+- (NSString *)emojify:(NSString *)string selectedRange:(inout NSRange *)selectedRange;
+
 @end
