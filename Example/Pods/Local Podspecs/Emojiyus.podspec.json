@@ -1,0 +1,22 @@
+{
+  "name": "Emojiyus",
+  "version": "0.1.0",
+  "summary": "A short description of Emojiyus.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Mikhail Kurenkov/Emojiyus",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Mikhail Kurenkov": "kurenkovmichael@gmil.com"
+  },
+  "source": {
+    "git": "https://github.com/Mikhail Kurenkov/Emojiyus.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Emojiyus/Classes/**/*"
+}

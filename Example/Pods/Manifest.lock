@@ -1,0 +1,16 @@
+PODS:
+  - Emojiyus (0.1.0)
+
+DEPENDENCIES:
+  - Emojiyus (from `../`)
+
+EXTERNAL SOURCES:
+  Emojiyus:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Emojiyus: 7795ef2733257fd5a2b961f6561e2dae5a375442
+
+PODFILE CHECKSUM: 99fe52fe09b7b5af2c7ab8bd92f072b5aebe5c49
+
+COCOAPODS: 1.3.1

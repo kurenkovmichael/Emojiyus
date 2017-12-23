@@ -1,0 +1,6 @@
+framework module Emojiyus {
+  umbrella header "Emojiyus.h"
+
+  export *
+  module * { export * }
+}
